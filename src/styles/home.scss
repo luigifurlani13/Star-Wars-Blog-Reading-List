@@ -11,3 +11,28 @@ img{
 .imagen{
     margin: 0;
 }
+.scroll {
+    // overflow: auto;
+    // white-space: nowrap;
+    // overflow-x: scroll;
+    // overflow-y: hidden;
+    // white-space:nowrap
+    display: flex;
+    flex-direction: row;
+    // transform: rotate(90deg) translateY(-100vh);
+    // transform-origin: top left;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;  
+}
+.cards{
+    display: inline-block;
+}
+
+h1{
+    color: yellow;
+}
+
+p{
+    color: yellow;
+}
