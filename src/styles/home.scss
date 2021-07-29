@@ -16,13 +16,13 @@ img{
     display: flex;
     flex-direction: row;
     width: 100%;
-    overflow: auto;
+    overflow-x: scroll;
 }
 
-.card{
-    width: 25rem;
-    height: 20rem;
-}
+// .card{
+//     width: 25rem;
+//     height: 20rem;
+// }
 
 .home{
     color: yellow;

@@ -17,7 +17,6 @@ export const Home = props => {
 				{store.people.map((person, i) => {
 					return (
 						<Cartas
-							className="m-4"
 							key={i}
 							name={person.name}
 							hair_color={person.hair_color}
@@ -33,7 +32,6 @@ export const Home = props => {
 				{store.vehicles.map((vehicles, i) => {
 					return (
 						<Cartas2
-							className="m-4"
 							key={i}
 							name={vehicles.name}
 							i={i}
@@ -49,7 +47,6 @@ export const Home = props => {
 				{store.starships.map((starships, i) => {
 					return (
 						<Cartas3
-							className="m-4"
 							key={i}
 							name={starships.name}
 							i={i}
