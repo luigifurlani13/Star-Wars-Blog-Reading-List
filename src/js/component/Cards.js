@@ -37,7 +37,7 @@ export const Cartas2 = props => {
 					<tr>Length: {props.length}</tr>
 					<tr>Cost: {props.cost_in_credits}</tr>
 				</Card.Text>
-				<Link to={"/characters/" + props.i}>
+				<Link to={"/vehicles/" + props.i}>
 					<Button variant="primary">Learn More</Button>
 				</Link>
 				<Button variant="warning">
@@ -58,7 +58,7 @@ export const Cartas3 = props => {
 					<tr>Length: {props.length}</tr>
 					<tr>Cost: {props.cost_in_credits}</tr>
 				</Card.Text>
-				<Link to={"/characters/" + props.i}>
+				<Link to={"/starships/" + props.i}>
 					<Button variant="primary">Learn More</Button>
 				</Link>
 				<Button variant="warning">
