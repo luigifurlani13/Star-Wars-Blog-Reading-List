@@ -1,10 +1,13 @@
+import { element } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			apiURL: "https://swapi.dev/api",
 			people: [],
 			vehicles: [],
-			starships: []
+			starships: [],
+			favorites: []
 		},
 		actions: {
 			peopleInfo: () => {
@@ -40,31 +43,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 					.then(() => console.log(getStore().starships));
 			},
-			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
+			favoritesInfo: item => {
+				let myFavorites = getStore().favorites;
+				let selected = myFavorites.find(element => element === item);
+				if (selected) {
+					myFavorites.filter(element => item != element);
+					setStore({ favorites: myFavorites });
+				} else {
+					myFavorites = [...myFavorites, item];
+					setStore({ favorites: myFavorites });
+				}
 			}
 		}
 	};
 };
 
 export default getState;
+
+// // Use getActions to call a function within a fuction
+// exampleFunction: () => {
+// 	getActions().changeColor(0, "green");
+// },
+// loadSomeData: () => {
+// 	/**
+// 		fetch().then().then(data => setStore({ "foo": data.bar }))
+// 	*/
+// },
+// changeColor: (index, color) => {
+// 	//get the store
+// 	const store = getStore();
+
+// 	//we have to loop the entire demo array to look for the respective index
+// 	//and change its color
+// 	const demo = store.demo.map((elm, i) => {
+// 		if (i === index) elm.background = color;
+// 		return elm;
+// 	});
+
+// reset the global store
+// setStore({ demo: demo });

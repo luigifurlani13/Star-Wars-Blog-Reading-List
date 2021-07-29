@@ -11,26 +11,24 @@ img{
 .imagen{
     margin: 0;
 }
-.scroll {
-    // overflow: auto;
-    // white-space: nowrap;
-    // overflow-x: scroll;
-    // overflow-y: hidden;
-    // white-space:nowrap
+
+.scroll{
     display: flex;
     flex-direction: row;
-    // transform: rotate(90deg) translateY(-100vh);
-    // transform-origin: top left;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    white-space: nowrap;  
-}
-.cards{
-    display: inline-block;
+    width: 100%;
+    overflow: auto;
 }
 
-h1{
+.m-4{
+    width: 25rem;
+    height: 20rem;
+}
+
+.home{
     color: yellow;
+}
+h1{
+    color: red;
 }
 
 .footer{
