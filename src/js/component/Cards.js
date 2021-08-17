@@ -12,7 +12,11 @@ export const Cartas = props => {
 	return (
 		<Col>
 			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
-				<Card.Img className="imagen" variant="top" src="holder.js/200px400" />
+				<Card.Img
+					className="imagen"
+					variant="top"
+					src="https://lumiere-a.akamaihd.net/v1/images/r2-d2-main_86916bb6.jpeg?region=304%2C0%2C1778%2C1000&width=1536"
+				/>
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
 					<Card.Text>
@@ -23,7 +27,7 @@ export const Cartas = props => {
 					<Link to={"/characters/" + props.i}>
 						<Button variant="primary">Learn More</Button>
 					</Link>
-					<Button variant="warning" onClick={() => actions.favoritesInfo(props.name)}>
+					<Button className="heart" variant="warning" onClick={() => actions.favoritesInfo(props.name)}>
 						<i className="far fa-heart" />
 					</Button>
 				</Card.Body>
@@ -35,7 +39,11 @@ export const Cartas2 = props => {
 	return (
 		<Col>
 			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
-				<Card.Img className="imagen" variant="top" src="holder.js/200px400" />
+				<Card.Img
+					className="imagen"
+					variant="top"
+					src="https://starwarsblog.starwars.com/wp-content/uploads/2020/12/hans-speeder-main-b_e7ca0176.jpg"
+				/>
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
 					<Card.Text>
@@ -46,7 +54,7 @@ export const Cartas2 = props => {
 					<Link to={"/vehicles/" + props.i}>
 						<Button variant="primary">Learn More</Button>
 					</Link>
-					<Button variant="warning">
+					<Button className="heart" variant="warning">
 						<i className="far fa-heart" />
 					</Button>
 				</Card.Body>
@@ -61,7 +69,7 @@ export const Cartas3 = props => {
 				<Card.Img
 					className="imagen"
 					variant="top"
-					src="https://filmdaily.co/wp-content/uploads/2020/10/mandalorian-lede-2-1300x731.jpg"
+					src="https://lumiere-a.akamaihd.net/v1/images/millennium-falcon-main-tlj-a_7cf89d3a.jpeg?region=0%2C0%2C1280%2C720"
 				/>
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
@@ -73,7 +81,7 @@ export const Cartas3 = props => {
 					<Link to={"/starships/" + props.i}>
 						<Button variant="primary">Learn More</Button>
 					</Link>
-					<Button variant="warning">
+					<Button className="heart" variant="warning">
 						<i className="far fa-heart" />
 					</Button>
 				</Card.Body>
@@ -88,14 +96,10 @@ Cartas.propTypes = {
 	hair_color: PropTypes.string,
 	eye_color: PropTypes.string,
 	i: PropTypes.string,
-	source: PropTypes.string,
-	model: PropTypes.string,
-	length: PropTypes.string,
-	cost_in_credits: PropTypes.string
+	source: PropTypes.string
 };
 Cartas2.propTypes = {
 	name: PropTypes.string,
-	gender: PropTypes.string,
 	i: PropTypes.string,
 	source: PropTypes.string,
 	model: PropTypes.string,
@@ -104,7 +108,6 @@ Cartas2.propTypes = {
 };
 Cartas3.propTypes = {
 	name: PropTypes.string,
-	gender: PropTypes.string,
 	i: PropTypes.string,
 	source: PropTypes.string,
 	model: PropTypes.string,

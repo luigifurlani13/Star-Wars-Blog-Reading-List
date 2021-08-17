@@ -8,6 +8,10 @@ img{
     margin-left: 200px;
 }
 
+.toggle{
+    margin-right: 100px;
+}
+
 .imagen{
     margin: 0;
     height: 20rem;
@@ -18,6 +22,10 @@ img{
     flex-direction: row;
     width: 100%;
     overflow-x: scroll;
+}
+
+.heart{
+    float: right;
 }
 
 .home{
@@ -58,4 +66,8 @@ img{
 
 .line{
     border: 0.5px solid red;
+}
+
+.container{
+    color: white;
 }
