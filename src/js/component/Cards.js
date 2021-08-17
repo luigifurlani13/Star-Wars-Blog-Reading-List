@@ -11,7 +11,7 @@ export const Cartas = props => {
 	const { store, actions } = useContext(Context);
 	return (
 		<Col>
-			<Card style={{ width: "30rem" }}>
+			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
 				<Card.Img className="imagen" variant="top" src="holder.js/200px400" />
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
@@ -34,7 +34,7 @@ export const Cartas = props => {
 export const Cartas2 = props => {
 	return (
 		<Col>
-			<Card style={{ width: "30rem" }}>
+			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
 				<Card.Img className="imagen" variant="top" src="holder.js/200px400" />
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
@@ -57,8 +57,12 @@ export const Cartas2 = props => {
 export const Cartas3 = props => {
 	return (
 		<Col>
-			<Card style={{ width: "30rem" }}>
-				<Card.Img className="imagen" variant="top" src="holder.js/200px400" />
+			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
+				<Card.Img
+					className="imagen"
+					variant="top"
+					src="https://filmdaily.co/wp-content/uploads/2020/10/mandalorian-lede-2-1300x731.jpg"
+				/>
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
 					<Card.Text>
