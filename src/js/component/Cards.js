@@ -8,6 +8,7 @@ import { Col } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
 export const Cartas = props => {
+	const addFav = () => actions.favoritesInfo(props.name);
 	const { store, actions } = useContext(Context);
 	return (
 		<Col>
@@ -27,7 +28,7 @@ export const Cartas = props => {
 					<Link to={"/characters/" + props.i}>
 						<Button variant="primary">Learn More</Button>
 					</Link>
-					<Button className="heart" variant="warning" onClick={() => actions.favoritesInfo(props.name)}>
+					<Button className="heart" variant="warning" onClick={() => addFav()}>
 						<i className="far fa-heart" />
 					</Button>
 				</Card.Body>

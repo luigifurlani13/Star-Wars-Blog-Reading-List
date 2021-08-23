@@ -22,7 +22,7 @@ export const Navbar = () => {
 					{store.favorites.map((favorite, i) => (
 						<Dropdown.Item href="#/action-1" key={i}>
 							{favorite}
-							<Button variant="danger" onClick={() => actions.favoritesInfo(favorite)}>
+							<Button variant="danger" onClick={() => actions.favoritesInfo(favorite, i)}>
 								<i className="fas fa-trash-alt" />
 							</Button>
 						</Dropdown.Item>
