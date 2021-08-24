@@ -47,7 +47,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				let myFavorites = getStore().favorites;
 				let selected = myFavorites.find(element => element === item);
 				if (selected) {
-					myFavorites.filter(element => item !== element);
+					myFavorites = myFavorites.filter(element => item !== element);
 					setStore({ favorites: myFavorites });
 				} else {
 					myFavorites = [...myFavorites, item];

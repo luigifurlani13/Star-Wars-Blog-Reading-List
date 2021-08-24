@@ -8,7 +8,6 @@ import { Col } from "react-bootstrap";
 import { Context } from "../store/appContext";
 
 export const Cartas = props => {
-	const addFav = () => actions.favoritesInfo(props.name);
 	const { store, actions } = useContext(Context);
 	return (
 		<Col>
@@ -28,7 +27,7 @@ export const Cartas = props => {
 					<Link to={"/characters/" + props.i}>
 						<Button variant="primary">Learn More</Button>
 					</Link>
-					<Button className="heart" variant="warning" onClick={() => addFav()}>
+					<Button className="heart" variant="warning" onClick={() => actions.favoritesInfo(props.name)}>
 						<i className="far fa-heart" />
 					</Button>
 				</Card.Body>
@@ -37,6 +36,7 @@ export const Cartas = props => {
 	);
 };
 export const Cartas2 = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<Col>
 			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
@@ -56,7 +56,7 @@ export const Cartas2 = props => {
 						<Button variant="primary">Learn More</Button>
 					</Link>
 					<Button className="heart" variant="warning">
-						<i className="far fa-heart" />
+						<i className="far fa-heart" onClick={() => actions.favoritesInfo(props.name)} />
 					</Button>
 				</Card.Body>
 			</Card>
@@ -64,6 +64,7 @@ export const Cartas2 = props => {
 	);
 };
 export const Cartas3 = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<Col>
 			<Card className="bg-dark text-white" style={{ width: "30rem" }}>
@@ -83,7 +84,7 @@ export const Cartas3 = props => {
 						<Button variant="primary">Learn More</Button>
 					</Link>
 					<Button className="heart" variant="warning">
-						<i className="far fa-heart" />
+						<i className="far fa-heart" onClick={() => actions.favoritesInfo(props.name)} />
 					</Button>
 				</Card.Body>
 			</Card>
