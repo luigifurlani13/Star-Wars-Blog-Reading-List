@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Row, Col, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Vehicles = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="main">
+		<Container fluid className="main">
 			<div className="d-flex">
 				<div>
 					<img
@@ -27,24 +27,24 @@ export const Vehicles = props => {
 				</div>
 			</div>
 			<hr className="line" />
-			<div className="container">
-				<div className="row">
-					<div className="col-6 col-sm-2">Name</div>
-					<div className="col-6 col-sm-2">Model</div>
-					<div className="col-6 col-sm-2">Length</div>
-					<div className="col-6 col-sm-2">Cost in Credits</div>
-					<div className="col-6 col-sm-2">Vehicle Class</div>
-					<div className="col-6 col-sm-2">Crew</div>
-				</div>
-				<div className="row">
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].name}</div>
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].model}</div>
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].length}</div>
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].cost_in_credits}</div>
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].vehicle_class || "NA"}</div>
-					<div className="col-6 col-sm-2">{store.vehicles[params.theid].crew}</div>
-				</div>
-			</div>
-		</div>
+			<Container>
+				<Row>
+					<Col>Name</Col>
+					<Col>Model</Col>
+					<Col>Length</Col>
+					<Col>Cost in Credits</Col>
+					<Col>Vehicle Class</Col>
+					<Col>Crew</Col>
+				</Row>
+				<Row>
+					<Col>{store.vehicles[params.theid].name}</Col>
+					<Col>{store.vehicles[params.theid].model}</Col>
+					<Col>{store.vehicles[params.theid].length}</Col>
+					<Col>{store.vehicles[params.theid].cost_in_credits}</Col>
+					<Col>{store.vehicles[params.theid].vehicle_class || "NA"}</Col>
+					<Col>{store.vehicles[params.theid].crew}</Col>
+				</Row>
+			</Container>
+		</Container>
 	);
 };

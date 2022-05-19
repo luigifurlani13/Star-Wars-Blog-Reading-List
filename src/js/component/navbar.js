@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Dropdown } from "react-bootstrap";
+import { Dropdown, Nav } from "react-bootstrap";
 import { Button } from "react-bootstrap";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
@@ -11,7 +11,7 @@ export const Navbar = () => {
 	const { store, actions } = useContext(Context);
 	console.log(store.favorites);
 	return (
-		<nav className="navbar navbar-dark bg-dark mb-3">
+		<Nav className="navbar navbar-dark bg-dark mb-3">
 			<Link to="/">
 				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png" />
 			</Link>
@@ -34,6 +34,6 @@ export const Navbar = () => {
 					)}
 				</Dropdown.Menu>
 			</Dropdown>
-		</nav>
+		</Nav>
 	);
 };

@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import PropTypes from "prop-types";
-import { Link, useParams } from "react-router-dom";
+import { Row, Col, Container } from "react-bootstrap";
+import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 export const Characters = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	return (
-		<div className="main">
+		<Container fluid className="main">
 			<div className="d-flex">
 				<div>
 					<img
@@ -27,24 +27,24 @@ export const Characters = props => {
 				</div>
 			</div>
 			<hr className="line" />
-			<div className="container">
-				<div className="row">
-					<div className="col-6 col-sm-2">Name</div>
-					<div className="col-6 col-sm-2">Birth Year</div>
-					<div className="col-6 col-sm-2">Gender</div>
-					<div className="col-6 col-sm-2">Height</div>
-					<div className="col-6 col-sm-2">Skin Color</div>
-					<div className="col-6 col-sm-2">Eye Color</div>
-				</div>
-				<div className="row">
-					<div className="col-6 col-sm-2">{store.people[params.theid].name}</div>
-					<div className="col-6 col-sm-2">{store.people[params.theid].birth_year}</div>
-					<div className="col-6 col-sm-2">{store.people[params.theid].gender}</div>
-					<div className="col-6 col-sm-2">{store.people[params.theid].height}</div>
-					<div className="col-6 col-sm-2">{store.people[params.theid].skin_color || "NA"}</div>
-					<div className="col-6 col-sm-2">{store.people[params.theid].eye_color}</div>
-				</div>
-			</div>
-		</div>
+			<Container>
+				<Row>
+					<Col>Name</Col>
+					<Col>Birth Year</Col>
+					<Col>Gender</Col>
+					<Col>Height</Col>
+					<Col>Skin Color</Col>
+					<Col>Eye Color</Col>
+				</Row>
+				<Row>
+					<Col>{store.people[params.theid].name}</Col>
+					<Col>{store.people[params.theid].birth_year}</Col>
+					<Col>{store.people[params.theid].gender}</Col>
+					<Col>{store.people[params.theid].height}</Col>
+					<Col>{store.people[params.theid].skin_color || "NA"}</Col>
+					<Col>{store.people[params.theid].eye_color}</Col>
+				</Row>
+			</Container>
+		</Container>
 	);
 };
