@@ -1,19 +1,19 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import { Cartas } from "../component/Cards";
 import { Cartas2 } from "../component/Cards";
 import { Cartas3 } from "../component/Cards";
 import { useContext } from "react";
+import { Col, Container } from "react-bootstrap";
 import { Context } from "../store/appContext";
-import PropTypes from "prop-types";
+
 
 export const Home = props => {
 	const { store, actions } = useContext(Context);
 	return (
-		<div>
+		<Container fluid>
 			<h1 className="home">Characters</h1>
-			<div className="scroll">
+			<Col className="scroll">
 				{store.people.map((person, i) => {
 					return (
 						<Cartas
@@ -26,9 +26,9 @@ export const Home = props => {
 						/>
 					);
 				})}
-			</div>
+			</Col>
 			<h1 className="home">Vehicles</h1>
-			<div className="scroll">
+			<Col className="scroll">
 				{store.vehicles.map((vehicles, i) => {
 					return (
 						<Cartas2
@@ -41,9 +41,9 @@ export const Home = props => {
 						/>
 					);
 				})}
-			</div>
+			</Col>
 			<h1 className="home">StarShips</h1>
-			<div className="scroll">
+			<Col className="scroll">
 				{store.starships.map((starships, i) => {
 					return (
 						<Cartas3
@@ -56,7 +56,7 @@ export const Home = props => {
 						/>
 					);
 				})}
-			</div>
-		</div>
+			</Col>
+		</Container>
 	);
 };

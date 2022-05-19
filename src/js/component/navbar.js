@@ -16,8 +16,8 @@ export const Navbar = () => {
 				<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1024px-Star_Wars_Logo.svg.png" />
 			</Link>
 			<Dropdown>
-				<Dropdown.Toggle className="toggle" variant="primary" id="dropdown-basic" size="lg">
-					Dropdown Button
+				<Dropdown.Toggle className="toggle" variant="danger" id="dropdown-basic" size="lg">
+					Favorites
 				</Dropdown.Toggle>
 				<Dropdown.Menu>
 					{store.favorites.length > 0 ? (

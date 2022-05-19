@@ -4,8 +4,9 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { Card } from "react-bootstrap";
 import { Button } from "react-bootstrap";
-import { Col } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { Context } from "../store/appContext";
+import "../../styles/index.css";
 
 export const Cartas = props => {
 	const { store, actions } = useContext(Context);
@@ -19,10 +20,10 @@ export const Cartas = props => {
 				/>
 				<Card.Body>
 					<Card.Title>{props.name}</Card.Title>
-					<Card.Text>
-						<tr>Gender: {props.gender}</tr>
-						<tr>Hair-Color: {props.hair_color}</tr>
-						<tr>Eye-Color: {props.eye_color}</tr>
+					<Card.Text className="info">
+						<Row> Gender: {props.gender}</Row> 
+						<Row>Hair-Color: {props.hair_color}</Row>
+						<Row>Eye-Color: {props.eye_color}</Row>
 					</Card.Text>
 					<Link to={"/characters/" + props.i}>
 						<Button variant="primary">Learn More</Button>
